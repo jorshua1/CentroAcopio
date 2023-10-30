@@ -24,5 +24,26 @@ namespace CentroAcopio.Views
         {
             InitializeComponent();
         }
+
+        private void btnMinimizar_Click(object sender, RoutedEventArgs e)
+        {
+            Window window = Window.GetWindow(this); // Obtener la ventana que contiene el UserControl
+
+            if (window != null)
+            {
+                window.WindowState = WindowState.Minimized; // Minimizar la ventana
+            }
+        }
+
+        private void btnCerrar_Click(object sender, RoutedEventArgs e)
+        {
+
+            Application.Current.Shutdown();
+        }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
