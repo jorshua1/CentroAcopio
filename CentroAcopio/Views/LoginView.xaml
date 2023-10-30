@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="CentroAcopio.Views.LoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CentroAcopio.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="850">
+
+    <Border Background="{StaticResource --backgroundDark}" CornerRadius="15">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.20*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" CornerRadius="15,0,0,15">
+                <!-- Aquí definimos el CornerRadius -->
+                <Border.Background>
+                    <ImageBrush ImageSource="../Resources/loginSideImage.jpg"></ImageBrush>
+                </Border.Background>
+            </Border>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="2.5*"/>
+                    <RowDefinition Height="1.5*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" 
+                           VerticalAlignment="Center" 
+                           HorizontalAlignment="Center" 
+                           FontSize="18" 
+                           Foreground="{StaticResource --textDark}"
+                           FontWeight="Bold">Hola</TextBlock>
+            </Grid>
+        </Grid>
+    </Border>
+
+</UserControl>
