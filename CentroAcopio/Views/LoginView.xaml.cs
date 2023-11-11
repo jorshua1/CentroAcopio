@@ -44,8 +44,11 @@ namespace CentroAcopio.Views
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             Window window = Window.GetWindow(this);
-            string usuario = txtUsuario.Text;
-            string contrasena = txtContrasena.Password.ToString();
+            // string usuario = txtUsuario.Text;
+            // string contrasena = txtContrasena.Password.ToString();
+
+            string usuario = "admin";
+            string contrasena = "admin";
             if (usuario == "admin" && contrasena == "admin")
             {
                 DashboardView dashboard = new DashboardView();
