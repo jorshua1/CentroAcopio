@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="650" d:DesignWidth="850">
 
-    <Border Background="{StaticResource --backgroundLight}" CornerRadius="15">
+    <Border Background="{StaticResource --BackgroundLight}" CornerRadius="15">
 
         <Grid>
             <Grid.ColumnDefinitions>
@@ -39,7 +39,7 @@
                     <Button x:Name="btnMinimizar"
                             BorderThickness="0"
                             Background="Transparent"
-                            Foreground="{StaticResource --primaryDark}"
+                            Foreground="{StaticResource --PrimaryDark}"
                             Content="-"
                             FontSize="24"
                             FontFamily="Inter"
@@ -50,7 +50,7 @@
                     <Button x:Name="btnCerrar"
                             BorderThickness="0"
                             Background="Transparent"
-                            Foreground="{StaticResource --redClose}"
+                            Foreground="{StaticResource --RedClose}"
                             Content="x"
                             FontSize="12"
                             FontWeight="Bold"
@@ -65,7 +65,7 @@
                     <TextBlock      
                         TextAlignment="Center"
                         FontSize="28" 
-                        Foreground="{StaticResource --textLight}"
+                        Foreground="{StaticResource --TextLight}"
                         FontWeight="Bold"
                         Padding="0 10"
                         FontFamily="Inter">Bienvenido</TextBlock>
@@ -73,18 +73,18 @@
                            VerticalAlignment="Center" 
                            HorizontalAlignment="Center" 
                            FontSize="14" 
-                           Foreground="{StaticResource --textLight}"
+                           Foreground="{StaticResource --TextLight}"
                            FontWeight="Regular"
                            TextWrapping="Wrap"
                            TextAlignment="Center"
                             Padding="55 0"
-                            FontFamily="Inter">Ingresa tus credenciales para iniciar sesion</TextBlock>
+                            FontFamily="Inter">Ingresa tus credenciales para iniciar sesión</TextBlock>
                 </StackPanel>
                 <StackPanel 
                     Grid.Row="2"                         
                     HorizontalAlignment="Center">
                     <TextBlock Text="Ingrese su usuario:"
-                               Foreground="{StaticResource --textLight}"
+                               Foreground="{StaticResource --TextLight}"
                                FontSize="14"
                                FontFamily="Inter"
                                FontWeight="Medium"
@@ -98,13 +98,13 @@
                              FontFamily="Inter"
                              FontWeight="Light"
                              Background="Transparent"
-                             Foreground="{StaticResource --textLight}"
-                             CaretBrush="{StaticResource --textLight}"
-                             BorderBrush="{StaticResource --textLight}"
+                             Foreground="{StaticResource --TextLight}"
+                             CaretBrush="{StaticResource --TextLight}"
+                             BorderBrush="{StaticResource --TextLight}"
                              BorderThickness="0 0 0 2"
                                 />
                     <TextBlock Text="Ingrese su contraseña:"
-                                   Foreground="{StaticResource --textLight}"
+                                   Foreground="{StaticResource --TextLight}"
                                    FontSize="14"
                                    FontFamily="Inter"
                                    FontWeight="Medium"
@@ -118,9 +118,9 @@
                                  FontFamily="Inter"
                                  FontWeight="Light"
                                  Background="Transparent"
-                                 Foreground="{StaticResource --textLight}"
-                                 CaretBrush="{StaticResource --textLight}"
-                                 BorderBrush="{StaticResource --textLight}"
+                                 Foreground="{StaticResource --TextLight}"
+                                 CaretBrush="{StaticResource --TextLight}"
+                                 BorderBrush="{StaticResource --TextLight}"
                                  BorderThickness="0 0 0 2"
                                  VerticalContentAlignment="Center"
                                 />
@@ -128,7 +128,7 @@
                     <Button x:Name="btnLogin"
                             BorderThickness="0"
                             Content="Ingresar"
-                            Foreground="{StaticResource --textDark}"
+                            Foreground="{StaticResource --TextDark}"
                             FontSize="12"
                             FontFamily="Inter"
                             Cursor="Hand"
@@ -140,8 +140,8 @@
                                 
                                 <Style.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="{StaticResource --primaryDark}"/>
-                                        <Setter Property="Foreground" Value="{StaticResource --textLight}"/>
+                                        <Setter Property="Background" Value="{StaticResource --PrimaryDark}"/>
+                                        <Setter Property="Foreground" Value="{StaticResource --TextLight}"/>
                                     </Trigger>
                                 </Style.Triggers>
                              </Style>

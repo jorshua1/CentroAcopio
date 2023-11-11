@@ -13,7 +13,7 @@
         Background="Transparent"
         AllowsTransparency="True"
         >
-    <Border Background="{StaticResource --backgroundDark}" CornerRadius="50">
+    <Border Background="{StaticResource --BackgroundDark}" CornerRadius="50">
         <views:LoginView></views:LoginView>
     </Border>
 </Window>

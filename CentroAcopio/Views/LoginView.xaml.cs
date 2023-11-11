@@ -43,7 +43,25 @@ namespace CentroAcopio.Views
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            Window window = Window.GetWindow(this);
+            string usuario = txtUsuario.Text;
+            string contrasena = txtContrasena.Password.ToString();
+            if (usuario == "admin" && contrasena == "admin")
+            {
+                DashboardView dashboard = new DashboardView();
+                dashboard.Show();
 
+                if (window != null)
+                {
+                    window.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Los datos ingresados son incorrectos, intentelo de nuevo");
+                txtContrasena.Clear();
+                txtUsuario.Text = "";
+            }
         }
     }
 }
