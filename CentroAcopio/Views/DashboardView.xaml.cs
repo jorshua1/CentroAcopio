@@ -73,34 +73,32 @@ namespace CentroAcopio.Views
             myDataGrid.ItemsSource = dt.DefaultView;
             reader.Close();
         }
-        
-        private void myDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-            DataGrid dg = sender as DataGrid;
-            DataRowView dr = dg.SelectedItem as DataRowView;
-            //que hace el codigo superior?
-
-            if(dr != null)
-            {
-                txtCodigoCat.Text = dr["codigo"].ToString();
-                txtNombreCat.Text = dr["nombre"].ToString();
-                txtValorCat.Text = dr["valor"].ToString();
-                btnAgregarCat.IsEnabled = false;
-                btnActualizarCat.IsEnabled = true;
-                btnEliminarCat.IsEnabled = true;
-
-
-            }
-        }
-        
-        private void btnAgregarCat_Click(object sender, RoutedEventArgs e)
-        {
-            string sql = "INSERT INTO categoria(codigo,nombre,valor) VALUES(:CODIGO,:NOMBRE,:VALOR)";
-            this.AUD(sql, 0);
-            btnAgregarCat.IsEnabled = false;
-            btnActualizarCat.IsEnabled = true;
-            btnEliminarCat.IsEnabled = true;
-        }
+        //
+        // private void myDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        // {
+        //
+        //     DataGrid dg = sender as DataGrid;
+        //     DataRowView dr = dg.SelectedItem as DataRowView;
+        //     //que hace el codigo superior?
+        //
+        //     if(dr != null)
+        //     {
+        //         txtCodigoCat.Text = dr["codigo"].ToString();
+        //         txtNombreCat.Text = dr["nombre"].ToString();
+        //         txtValorCat.Text = dr["valor"].ToString();
+        //         btnAgregarCat.IsEnabled = false;
+        //         btnActualizarCat.IsEnabled = true;
+        //         btnEliminarCat.IsEnabled = true;
+        //
+        //
+        //     }
+        // }
+        //
+        // private void btnAgregarCat_Click(object sender, RoutedEventArgs e)
+        // {
+        //     string sql = "INSERT INTO categoria(codigo,nombre,valor) VALUES(:CODIGO,:NOMBRE,:VALOR)";
+        //     this.AUD(sql, 0);
+        //     btnAgregarCat.IsEnabled = false;
+        // }
     }
 }

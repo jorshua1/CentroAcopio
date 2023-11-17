@@ -19,8 +19,8 @@ namespace CentroAcopio.Model
 
         public OracleConnection ConexionDB_Oracle()
         {
-
-            OracleConnection con = new OracleConnection("Data Source=" + DataSource + "; User Id=" + UsuarioDB + "; Password=" + ContraseñaDB + ";");
+            OracleConnection con = new OracleConnection("Data Source=" + DataSource + "; User Id=" + UsuarioDB +
+                                                        "; Password=" + ContraseñaDB + ";");
             //Obtengo la cadena de conexion del archivo App.config
             //String cadenaConexion = ConfigurationManager.ConnectionStrings["cadenaConexion"].ConnectionString;
             try
@@ -35,9 +35,8 @@ namespace CentroAcopio.Model
                 //Si la conexion no fue exitosa muestro un mensaje de error
                 MessageBox.Show("Error al conectar" + ex.Message);
             }
+
             return con;
         }
-
-
     }
 }

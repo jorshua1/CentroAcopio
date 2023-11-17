@@ -51,9 +51,12 @@ namespace CentroAcopio.Views
             string contrasena = "admin";
             if (usuario == "admin" && contrasena == "admin")
             {
-                DashboardView dashboard = new DashboardView();
-                dashboard.Show();
+                // DashboardView dashboard = new DashboardView();
+                // dashboard.Show();
 
+                ProductPageView productPageView = new ProductPageView();
+                productPageView.Show();
+                
                 if (window != null)
                 {
                     window.Close();
