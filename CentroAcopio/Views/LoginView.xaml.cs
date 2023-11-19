@@ -54,8 +54,8 @@ namespace CentroAcopio.Views
                 // DashboardView dashboard = new DashboardView();
                 // dashboard.Show();
 
-                ProductPageView productPageView = new ProductPageView();
-                productPageView.Show();
+                DashboardView dashboardView = new DashboardView();
+                dashboardView.Show();
                 
                 if (window != null)
                 {
