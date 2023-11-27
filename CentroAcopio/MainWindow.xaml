@@ -3,17 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CentroAcopio"
         xmlns:views="clr-namespace:CentroAcopio.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="650" Width="850"
         WindowStyle="None"
+        Icon="Resources/Group 4.png"
         WindowStartupLocation="CenterScreen"
         MouseDown="Window_MouseDown"
         Background="Transparent"
-        AllowsTransparency="True"
-        >
+        AllowsTransparency="True">
     <Border Background="{StaticResource --BackgroundDark}" CornerRadius="50">
-        <views:LoginView></views:LoginView>
+        <views:LoginView />
     </Border>
 </Window>

@@ -1,0 +1,57 @@
+﻿<Window x:Class="CentroAcopio.Views.Client.CreateClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        d:DesignHeight="450" d:DesignWidth="450"
+        Title="CREAR CLIENTE" Height="450" Width="450">
+   <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="40">
+        <StackPanel>
+            <TextBlock Margin="0 20" TextAlignment="Center" FontFamily="Inter" FontSize="16"
+                       Foreground="{StaticResource --TextLight}" FontWeight="Bold">
+                CREAR CLIENTE
+            </TextBlock>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Cédula:" Width="100" VerticalAlignment="Center" Margin="0,0,10,0" />
+                <TextBox Name="TxtCedula" MaxLength="10" Width="200" PreviewTextInput="NumberValidationTextBox" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Nombre:" Width="100" VerticalAlignment="Center" Margin="0,5,10,0" />
+                <TextBox Name="TxtNombre" MaxLength="20" Width="200" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Apellido:" Width="100" VerticalAlignment="Center" Margin="0,5,10,0" />
+                <TextBox Name="TxtApellido" MaxLength="20" Width="200" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Dirección:" Width="100" VerticalAlignment="Center" Margin="0,5,10,0" />
+                <TextBox Name="TxtDireccion" MaxLength="30" Width="200" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="NombreComercial:" Width="100" VerticalAlignment="Center" Margin="0,5,10,0" />
+                <TextBox Name="TxtNombreComercial" MaxLength="20" Width="200" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Teléfono:" Width="100" VerticalAlignment="Center" Margin="0,5,10,0" />
+                <TextBox Name="TxtTelefono" MaxLength="10" PreviewTextInput="NumberValidationTextBox" Width="200" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Ciudad:" Width="100" VerticalAlignment="Center" Margin="0,5,10,0" />
+                <ComboBox x:Name="ComboBoxCiudades" Width="200" Height="20" IsEditable="True"
+                          IsReadOnly="True" Text="Seleccione una ciudad"/>
+
+            </StackPanel>
+
+            <Button Content="Crear" Click="Enviar_Click" />
+        </StackPanel>
+
+
+    </Grid>
+</Window>

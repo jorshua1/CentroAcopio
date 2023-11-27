@@ -1,25 +1,31 @@
 ﻿using System.Windows;
+using System.Windows.Input;
+using CentroAcopio.Views.Client;
+using CentroAcopio.Views.Distributor;
+using CentroAcopio.Views.Providers;
 
 namespace CentroAcopio.Views
 {
-    public partial class DashboardView : Window
+    public partial class DashboardView
     {
         public DashboardView()
         {
             InitializeComponent();
-            this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
+            MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
             // Hago que la ventana se ponga en modo pantalla completa
-            this.WindowState = WindowState.Maximized;
+            WindowState = WindowState.Maximized;
+        }
+
+        private void OnDragMove(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed) DragMove();
         }
 
         private void btnMinimizar_Click(object sender, RoutedEventArgs e)
         {
-            Window window = Window.GetWindow(this); // Obtener la ventana que contiene el UserControl
+            var window = GetWindow(this); // Obtener la ventana que contiene el UserControl
 
-            if (window != null)
-            {
-                window.WindowState = WindowState.Minimized; // Minimizar la ventana
-            }
+            if (window != null) window.WindowState = WindowState.Minimized; // Minimizar la ventana
         }
 
         private void btnCerrar_Click(object sender, RoutedEventArgs e)
@@ -29,7 +35,7 @@ namespace CentroAcopio.Views
 
         private void BtnProductoView_OnClick(object sender, RoutedEventArgs e)
         {
-            contenedor.Content = new VistaPruebaContent();
+            contenedor.Content = new ProductView();
             // throw new System.NotImplementedException();
         }
 
@@ -37,5 +43,25 @@ namespace CentroAcopio.Views
         {
             contenedor.Content = new PruebaDos();
         }
-}
+
+        private void BtnProveedorView_OnClick(object sender, RoutedEventArgs e)
+        {
+            contenedor.Content = new ProviderView();
+        }
+
+        private void Logo_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            contenedor.Content = new DefaultDashboarView();
+        }
+
+        private void BtnClienteView_OnClick(object sender, RoutedEventArgs e)
+        {
+            contenedor.Content = new ClientView();
+        }
+
+        private void BtnDistribuidoresView_OnClick(object sender, RoutedEventArgs e)
+        {
+            contenedor.Content = new DistributorView();
+        }
+    }
 }

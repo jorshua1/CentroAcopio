@@ -1,26 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using Oracle.ManagedDataAccess.Client;
 
 namespace CentroAcopio.Model
 {
-    public class Clase_Conexion
+    public class ClaseConexion
     {
-        string UsuarioDB = "proyectointegradorjh";
-        string ContraseñaDB = "proyectointegradorjh";
-        string DataSource = "localhost";
+        private const string ContraseñaDb = "proyectointegradorjh";
+        private const string DataSource = "localhost";
+        private const string UsuarioDb = "proyectointegradorjh";
 
         public OracleConnection ConexionDB_Oracle()
         {
-            OracleConnection con = new OracleConnection("Data Source=" + DataSource + "; User Id=" + UsuarioDB +
-                                                        "; Password=" + ContraseñaDB + ";");
+            var con = new OracleConnection("Data Source=" + DataSource + "; User Id=" + UsuarioDb +
+                                           "; Password=" + ContraseñaDb + ";");
             //Obtengo la cadena de conexion del archivo App.config
             //String cadenaConexion = ConfigurationManager.ConnectionStrings["cadenaConexion"].ConnectionString;
             try
@@ -28,7 +21,7 @@ namespace CentroAcopio.Model
                 //Abro la conexion a la base de datos
                 con.Open();
                 //Si la conexion fue exitosa muestro un mensaje de conexion exitosa
-                MessageBox.Show("Conexion exitosa");
+                Console.WriteLine(@"Conexion exitosa");
             }
             catch (Exception ex)
             {

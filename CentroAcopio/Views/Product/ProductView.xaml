@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="CentroAcopio.Views.ProductView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style x:Key="EstiloBotones" TargetType="Button">
+            <Setter Property="Width" Value="185" />
+            <Setter Property="Height" Value="40" />
+            <Setter Property="Margin" Value="20 5" />
+            <Setter Property="Background" Value="{StaticResource --TextLight}" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="FontFamily" Value="Arial" />
+            <Setter Property="FontSize" Value="14" />
+            <Style.Triggers>
+                <!-- Cambio de color al pasar el cursor -->
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource --PrimaryDark}" />
+                    <Setter Property="Foreground" Value="{StaticResource --TextLight}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <!-- vista productos -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*" />
+            <RowDefinition Height="5*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Vertical" Height="AUTO">
+            <TextBlock Margin="10 0" FontSize="36">Productos con datos</TextBlock>
+            <DataGrid x:Name="myDataGrid" d:ItemsSource="{d:SampleData ItemCount=20}" Width="auto"
+                      Margin="10 0" />
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <Button Style="{StaticResource EstiloBotones}">
+                <Span>
+                    <Label Content="{iconPacks:Material Kind=Plus}" Foreground="White" FontSize="16"  Margin="5 0"/>
+                    <Label Content="Crear nuevo producto" Foreground="White"/>
+                </Span>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="13.25" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Style="{StaticResource EstiloBotones}" Click="SeeProducts_OnClick">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="13.25" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+                Ver productos disponibles
+            </Button>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

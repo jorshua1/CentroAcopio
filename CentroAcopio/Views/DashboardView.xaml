@@ -4,8 +4,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:CentroAcopio.Views"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
         WindowStyle="None"
+        Icon="/Resources/Group 4.png"
         AllowsTransparency="True">
     <Window.Resources>
         <!-- Definición del estilo para los botones -->
@@ -45,16 +47,17 @@
             <!-- Logo -->
             <Grid Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <!-- Contenido de la primera fila -->
-                <Image Height="64">
+                <Image Height="64" MouseDown="Logo_OnMouseDown">
                     <Image.Source>
-                        <BitmapImage UriSource="../Resources/Group 3.png"></BitmapImage>
+                        <BitmapImage UriSource="../Resources/Group 3.png" />
                     </Image.Source>
                 </Image>
             </Grid>
 
             <!-- Sección de botones -->
             <StackPanel Grid.Row="1" Margin="10" HorizontalAlignment="Center">
-                <Button x:Name="btnProductoView" Click="BtnProductoView_OnClick" Content="Productos" Style="{StaticResource EstiloBotones}">
+                <Button x:Name="btnProductoView" Click="BtnProductoView_OnClick" Content="Productos"
+                        Style="{StaticResource EstiloBotones}">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border CornerRadius="13.25" Background="{TemplateBinding Background}">
@@ -63,7 +66,8 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <Button x:Name="btnInventarioView" Click="BtnInventarioView_OnClick" Content="Inventario" Style="{StaticResource EstiloBotones}">
+                <Button x:Name="btnInventarioView" Click="BtnInventarioView_OnClick" Content="Inventario"
+                        Style="{StaticResource EstiloBotones}">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border CornerRadius="13.25" Background="{TemplateBinding Background}">
@@ -72,7 +76,7 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <Button x:Name="btnProveedoresView" Content="Proveedores" Style="{StaticResource EstiloBotones}">
+                <Button x:Name="btnProveedoresView" Content="Proveedores" Style="{StaticResource EstiloBotones}"  Click="BtnProveedorView_OnClick">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border CornerRadius="13.25" Background="{TemplateBinding Background}">
@@ -81,7 +85,7 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <Button x:Name="btnClienteView" Content="Clientes" Style="{StaticResource EstiloBotones}">
+                <Button x:Name="btnClienteView" Content="Clientes" Style="{StaticResource EstiloBotones}" Click="BtnClienteView_OnClick">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border CornerRadius="13.25" Background="{TemplateBinding Background}">
@@ -90,7 +94,7 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <Button x:Name="btnDistribuidoresView" Content="Distribuidores" Style="{StaticResource EstiloBotones}">
+                <Button x:Name="btnDistribuidoresView" Content="Distribuidores" Style="{StaticResource EstiloBotones}" Click="BtnDistribuidoresView_OnClick">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border CornerRadius="13.25" Background="{TemplateBinding Background}">
@@ -99,7 +103,16 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <!-- Añade más botones según sea necesario -->
+                <!-- se añadiran más botones según sea necesario -->
+                <Button x:Name="btnVentasView" Content="Ventas" Style="{StaticResource EstiloBotones}">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border CornerRadius="13.25" Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </StackPanel>
 
             <!-- Textos -->
@@ -114,21 +127,26 @@
                                FontFamily="Inter" FontWeight="Bold" />
                 </StackPanel>
                 <!-- Botón con icono -->
-                <Button Width="40" Height="40">
-                    <!-- <Image Source="ruta_del_icono_tuerca.png" Width="40" Height="40" /> -->
-                    log
+                <Button Content="{iconPacks:Material Kind=Cog}" Width="40" Style="{StaticResource EstiloBotones}">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border CornerRadius="13.25" Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
                 </Button>
             </WrapPanel>
         </Grid>
 
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="30"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid Grid.Row="0" Background="Transparent">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
+                    <ColumnDefinition MouseLeftButtonDown="OnDragMove" />
                     <ColumnDefinition Width="25" />
                     <ColumnDefinition Width="25" />
                     <ColumnDefinition Width="5" />
@@ -159,7 +177,9 @@
             <!-- Bloque del dashboard con el Frame -->
             <Grid Grid.Row="1">
                 <!-- insercion del frame que mostrara la pagina segun indiquemos en el boton -->
-                <ContentControl x:Name="contenedor" />
+                <ContentControl x:Name="contenedor">
+                    <local:DefaultDashboarView />
+                </ContentControl>
             </Grid>
         </Grid>
     </Grid>
